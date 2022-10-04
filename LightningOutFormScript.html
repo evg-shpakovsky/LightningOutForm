@@ -1,0 +1,34 @@
+<html>
+  <style>
+    a {
+      color: orange;
+    }
+  </style>
+
+  <script src="https://twistellar49-dev-ed.my.site.com/lightningOut/lightning/lightning.out.js"></script>
+
+  <div data-lightning-out="true"></div>
+
+  <script>
+    const appName = "c:OutFormWrapper";
+    const componentName = "c:lightningOutForm";
+    const lightningEndpoint = "https://twistellar49-dev-ed.my.site.com";
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {};
+
+    $Lightning.use(
+      appName,
+      function () {
+        $Lightning.createComponent(
+          componentName,
+          componentAttributes,
+          targetElement,
+          function (cmp) {
+            console.log("lightning component created");
+          }
+        );
+      },
+      lightningEndpoint
+    );
+  </script>
+</html>
